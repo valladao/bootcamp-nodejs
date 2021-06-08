@@ -1,11 +1,13 @@
 const path = require("path")
+//const fs = require("fs")
+const fs = require("fs-extra")
 
-//const name = "flavio"
+const basePath = path.resolve("manoel")
 
-const a = path.resolve("flavio.txt")
-const b = path.resolve("tmp", "flavio.txt")
-const c = path.resolve("/etc", "flavio.txt")
+//const newPath = path.resolve("manoel")
 
-console.log(a)
-console.log(b)
-console.log(c)
+fs.remove(basePath, (err) => {
+  if (err) {
+    console.error(err)
+  }
+})
